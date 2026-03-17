@@ -56,6 +56,7 @@ func TestCapture(t *testing.T) {
 		{"${FOO_3000:-near the bar}", "", "FOO_3000", ":-", "near the bar"},
 		{"${FOO:--1}", "", "FOO", ":-", "-1"},
 		{"${FOO:-http://www.example.com/bar/gar/war?a=b}", "", "FOO", ":-", "http://www.example.com/bar/gar/war?a=b"},
+		{"${FOO:-#{1234}}", "", "FOO", ":-", "#{1234}"},
 		{`\${FOO}`, `\`, "FOO", noDefaultDefined, noDefaultDefined},
 		{`\\${FOO:-bar}`, `\\`, "FOO", ":-", "bar"},
 		{`\\\${FOO:-bar}`, `\\\`, "FOO", ":-", "bar"},

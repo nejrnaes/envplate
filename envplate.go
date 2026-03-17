@@ -23,7 +23,7 @@ type Handler struct {
 	Charset string
 }
 
-var exp = regexp.MustCompile(`(\\*)\$\{(.+?)(?:(\:\-)(.*?))?\}`)
+var exp = regexp.MustCompile(`(\\*)\$\{(.+?)(?:(\:\-)(.*?\}*))?\}`)
 
 func (h *Handler) Apply(globs []string) error {
 
